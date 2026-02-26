@@ -137,8 +137,17 @@ func (spd *SourceProfileDialectImpl) NewSourceProfileConnectionCloudSQLMySQL(par
 	mysql.Project = project
 	mysql.Region = region
 	mysql.Pwd = password
+	if secretManagerUri, ok := params["secretManagerUri"]; ok {
+		_, pwd, err := utils.FetchPasswordFromSecretManager(secretManagerUri)
+		if err != nil {
+			return mysql, err
+		}
+		mysql.Pwd = pwd
+	}
 	return mysql, nil
 }
+
+
 
 type SourceProfileConnectionMySQL struct {
 	Host            string // Same as MYSQLHOST environment variable
@@ -244,6 +253,13 @@ func (spd *SourceProfileDialectImpl) NewSourceProfileConnectionCloudSQLPostgreSQ
 	postgres.Project = project
 	postgres.Region = region
 	postgres.Pwd = password
+	if secretManagerUri, ok := params["secretManagerUri"]; ok {
+		_, pwd, err := utils.FetchPasswordFromSecretManager(secretManagerUri)
+		if err != nil {
+			return postgres, err
+		}
+		postgres.Pwd = pwd
+	}
 	return postgres, nil
 }
 
