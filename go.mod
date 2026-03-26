@@ -7,7 +7,7 @@ require (
 	cloud.google.com/go/aiplatform v1.89.0
 	cloud.google.com/go/dataflow v0.11.0
 	cloud.google.com/go/datastream v1.14.1
-	cloud.google.com/go/monitoring v1.24.2
+	cloud.google.com/go/monitoring v1.24.3
 	cloud.google.com/go/pubsub v1.49.0
 	cloud.google.com/go/resourcemanager v1.10.6
 	cloud.google.com/go/secretmanager v1.14.7
