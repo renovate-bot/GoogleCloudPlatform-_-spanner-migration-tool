@@ -5,7 +5,7 @@ go 1.24.11
 require (
 	cloud.google.com/go v0.121.0
 	cloud.google.com/go/aiplatform v1.89.0
-	cloud.google.com/go/dataflow v0.11.0
+	cloud.google.com/go/dataflow v0.11.1
 	cloud.google.com/go/datastream v1.14.1
 	cloud.google.com/go/monitoring v1.24.2
 	cloud.google.com/go/pubsub v1.49.0
